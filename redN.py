@@ -38,10 +38,17 @@ l = input("inserta el label: ")
 
 for x in range(3,5):
     erroroculto.append(O[x]*(1-O[x])*w[3][x-3]*err6)
-    """deltaw=l(err6)(O[3])
-    deltawp=w[3][0]+deltaw"""
 
+deltaw=[] 
+deltawp=[]
+for x in range(0,3):
+    deltaw.append(l*(erroroculto[0])*(O[x]))
 
+for x in range(0,3):
+    """deltawp.append(w[3][0]+deltaw[x])"""
+    deltaw.append(l*(erroroculto[1])*(O[x]))	
+
+print(deltaw)
 print("error en la capa oculta", erroroculto)
 
 print(I)
