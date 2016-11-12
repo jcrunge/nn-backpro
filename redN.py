@@ -11,6 +11,7 @@ w=[[0.2,-0.3],[0.4,0.1],[-0.5,0.2],[-0.3,-0.2]]
 smi4=0.0
 smi5=0.0
 smi6=0.0
+erroroculto=[]
 """sumamult=(w[0]*O[0])+(w[2]*O[1])+(w[4]*O[2])+teta[0]"""
 for x in range(3):
     smi4+= (w[x][0]*O[x])
@@ -30,6 +31,17 @@ resul_smi6=w[3][0]*O[3]+w[3][1]*O[4]+teta[2]
 I.append(resul_smi6)
 
 O.append(sigmoid(I[5]))
+
+err6=(O[5])*(1-O[5])*(X[2]-O[5])
+
+l = input("inserta el label: ")
+
+for x in range(3,5):
+    erroroculto.append(O[x]*(1-O[x])*w[3][x-3]*err6)
+    """deltaw=l(err6)(O[3])
+    deltawp=w[3][0]+deltaw"""
+
+print("error en la capa oculta", erroroculto)
 
 print(I)
 print(O)
