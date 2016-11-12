@@ -41,6 +41,7 @@ for x in range(3,5):
     """deltaw=l(err6)(O[3])
     deltawp=w[3][0]+deltaw"""
 
+
 print("error en la capa oculta", erroroculto)
 
 print(I)
