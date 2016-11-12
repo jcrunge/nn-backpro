@@ -35,18 +35,20 @@ O.append(sigmoid(I[5]))
 err6=(O[5])*(1-O[5])*(X[2]-O[5])
 
 l = input("inserta el label: ")
-
+deltaw=[] 
 for x in range(3,5):
     erroroculto.append(O[x]*(1-O[x])*w[3][x-3]*err6)
+    deltaw.append(l*(err6)*O[x])
 
-deltaw=[] 
+
 deltawp=[]
 for x in range(0,3):
     deltaw.append(l*(erroroculto[0])*(O[x]))
 
 for x in range(0,3):
-    """deltawp.append(w[3][0]+deltaw[x])"""
     deltaw.append(l*(erroroculto[1])*(O[x]))	
+
+deltawp.append(w[3][0]+deltaw[x])
 
 print(deltaw)
 print("error en la capa oculta", erroroculto)
