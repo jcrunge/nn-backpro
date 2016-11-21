@@ -10,8 +10,9 @@ smi5=0.0
 smi6=0.0
 O=[]
 
-l = input("inserta el label: ")
-
+#l = input("inserta el label: ")
+#si trabaja l=1
+l=0
 import numpy as np
 
 def sigmoid(y):
@@ -34,7 +35,7 @@ for x in range(0,1):
         if(Y[x][y]!="," and Y[x][y]!="\n"):
             O.append(int(Y[x][y]))
 
-while(x2<=41):
+while(x2<=63):
     for x in range(x1,x2):
         for y in range(len(Y[x])):
             if(Y[x][y]!="," and Y[x][y]!="\n"):
@@ -58,7 +59,7 @@ while(x2<=41):
 
     I.append(resul_smi6)
     O.append(sigmoid(I[5]))
-    #error que deriva del sigmoid
+    #error que deriva del sigmoid Dentro de X estara el Target (que es el lugar)
     err6=(O[5])*(1-O[5])*(X[2]-O[5])
 
     deltaw=[] 
@@ -118,5 +119,6 @@ while(x2<=41):
     x1=x2
     x2+=1
 
-print(O[-1])
-print(err6)
+#print (O[-1])
+print "Salida del error "
+print err6
